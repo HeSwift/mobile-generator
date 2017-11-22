@@ -3,8 +3,16 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- 禁止用户缩放页面,初始缩放比例为1,用户缩放比例为1 -->
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- iphone设备中的safari私有meta标签,允许全屏模式浏览 -->
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <!-- iphone设备中的safari私有meta标签,指定的iphone中safari顶端的状态条的样式 -->
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <!-- 忽略将页面中的数字识别为电话号码 -->
+  <meta content="telephone=no" name="format-detection">
+  <!-- 忽略Android平台中对邮箱地址的识别-->
+  <meta name="format-detection" content="email=no" />
   <title>home</title>
   <link rel="stylesheet" href="styles/lib/lib.min.css">
   <link rel="stylesheet" href="styles/css/home.min.css">

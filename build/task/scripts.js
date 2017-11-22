@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var concat = require('gulp-concat'); //合并文件
 var uglify = require('gulp-uglify'); //压缩文件
 var notify = require('gulp-notify'); //通知
+var rename = require('gulp-rename'); //重命名文件
 var rev = require('gulp-rev'); //- 对文件名加MD5后缀
 var revCollector = require('gulp-rev-collector'); //替换文件
 
@@ -13,16 +14,18 @@ const { REV_JS_SRC } = REV;
 gulp.task('js-dev', function() {
 	gulp
 		.src(SCRIPTS_SRC)
-		.pipe(concat(SCRIPTS_CONCAT_NAME))
+		// .pipe(concat(SCRIPTS_CONCAT_NAME))
 		.pipe(uglify())
+		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest(SCRIPTS_DIST));
 });
 
 gulp.task('js-pro', function() {
 	gulp
 		.src(SCRIPTS_SRC)
-		.pipe(concat(SCRIPTS_CONCAT_NAME))
+		// .pipe(concat(SCRIPTS_CONCAT_NAME))
 		.pipe(uglify())
+		.pipe(rename({ suffix: '.min' }))
 		.pipe(rev())
 		.pipe(gulp.dest(SCRIPTS_DIST))
 		.pipe(rev.manifest())
